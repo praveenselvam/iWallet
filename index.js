@@ -1,9 +1,43 @@
 Ext.setup({
-    tabletStartupScreen: 'tablet_startup.png',
+    tabletStartupScreen: 'tabletStartupScreenstartup.png',
     phoneStartupScreen: 'phone_startup.png',
     icon: 'icon.png',
     glossOnIcon: false,
     onReady: function() {
+
+        Ext.regModel('Card', {
+            fields: ['content', 'cls']
+        });
+
+		var store = new Ext.data.Store({
+            model: 'Card',
+            proxy: {
+                type: 'ajax',
+                url: 'mock/get-expense.php',
+                reader: {
+                    type: 'json',
+                    root: 'items'
+                }
+            },
+            listeners: {
+                datachanged: function(){
+					alert(0);
+                }
+            }    
+        });
+        store.read();
+
+        /*Ext.Ajax.request({
+            url: 'mock/get-expense.php',
+            success: function(response, opts) {
+				alert(response.responseText);
+                var obj = Ext.decode(response.responseText);
+                console.dir(obj);
+            },
+            failure: function(response, opts) {
+				console.log('server-side failure with status code ' + response.status);
+            }
+        });*/
 
         Ext.regModel('ExpenseItem', {
             fields: [
@@ -28,20 +62,38 @@ Ext.setup({
             }]
         });
 
+        var store = new Ext.data.JsonStore({
+            // store configs
+            autoDestroy: true,
+            storeId: 'expense-item-store',
+
+            proxy: {
+                type: 'ajax',
+                url: 'mock/get-expenses.php',
+                reader: {
+                    type: 'json',
+                    root: 'items'
+                }
+            },
+
+            model: 'ExpenseItem',
+        });
+
         var expenses = new Ext.List({
-            itemId: 'expense_list',
+            itemId: 'expense-list',
             tpl: '	<tpl for=".">\
 						<div class="expense-item">\
+							<div style="display: none;">{date}</div>\
 							<div class="description">{description}</div>\
 							<div class="price">{price}</div>\
-							<div class="meta">{date} | Shared with: {sharing} friends</div>\
+							<div class="meta">Shared with: {sharing} friends</div>\
 						</div>\
 					</tpl>',
             itemSelector: 'div.expense-item',
 
             singleSelect: true,
             indexBar: false,
-            grouped: false,
+            grouped: true,
             fullscreen: true,
 
             disclosure: {
@@ -55,28 +107,28 @@ Ext.setup({
                 model: 'ExpenseItem',
                 sorters: 'description',
 
-                getGroupString: function(record) {
-                    return record.get('description')[0];
+                getGroupString: function(record) { 
+                    return record.get('date');
                 },
 
                 data: [
                 {
                     description: 'Pizza',
-                    price: '25023.00',
+                    price: '2502.00',
                     sharing: '2',
-                    date: new Date().format('F d')
+                    date: new Date().format('Y-m-d')
                 },
                 {
                     description: 'Lunch',
                     price: '100.00',
                     sharing: '0',
-                    date: new Date().format('F d')
+                    date: new Date().format('Y-m-d')
                 },
                 {
                     description: 'Snacks',
                     price: '40.00',
                     sharing: '1',
-                    date: new Date().format('F d')
+                    date: new Date().format('Y-m-d')
                 }
                 ]
             })
@@ -137,16 +189,10 @@ Ext.setup({
                     name: 'date',
                     label: 'Date'
                 }]
-            }],
-            listeners: {
-                submit: function(form, result) {
-                    alert('form was submitted');
-                },
-                exception: function(form, result) {
-                    alert('there was an error: ' + result);
-                }
-            }
+            }]
         });
+
+        var expenseItem;
 
         var overlay = new Ext.Panel({
             floating: true,
@@ -165,12 +211,9 @@ Ext.setup({
                     ui: 'action',
                     text: 'Save',
                     handler: function() {
-                        form.submit({
-                            waitMsg: {
-                                message: 'Submitting',
-                                cls: 'demos-loading'
-                            }
-                        });
+                        form.updateModel(expenseItem);
+                        expenses.getStore().add(expenseItem);
+                        overlay.hide();
                     }
                 },
                 {
@@ -197,17 +240,12 @@ Ext.setup({
                 ui: 'mask',
                 iconCls: 'add',
                 handler: function() {
-
-                    overlay.setCentered(true).show();
-                    var expenseItem = Ext.ModelMgr.create({
-                        description: 'Model entry',
-                        price: 100,
-                        sharing: '2',
-                        date: new Date().format('F d')
+                    expenseItem = Ext.ModelMgr.create({
+                        date: new Date().format('Y-m-d')
                     },
                     'ExpenseItem');
-
-                    form.load(expenseItem);
+                    overlay.setCentered(true).show();
+                    form.loadModel(expenseItem);
                 }
             }]
         }];
@@ -229,7 +267,7 @@ Ext.setup({
                 cover: true
             },
             items: [{
-                id: 'tab_dashboard',
+                id: 'tab-dashboard',
                 title: 'Dashboard',
                 iconCls: 'info',
                 cls: 'card1',

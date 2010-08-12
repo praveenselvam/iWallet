@@ -1,0 +1,8 @@
+{
+    results: 2000, // Reader's configured totalProperty
+    rows: [        // Reader's configured root
+        // record data objects:
+        { id: 1, firstname: 'Bill', occupation: 'Gardener' },
+        { id: 2, firstname: 'Ben' , occupation: 'Horticulturalist' }
+    ]
+}
