@@ -5,40 +5,6 @@ Ext.setup({
     glossOnIcon: false,
     onReady: function() {
 
-        Ext.regModel('Card', {
-            fields: ['content', 'cls']
-        });
-
-		var store = new Ext.data.Store({
-            model: 'Card',
-            proxy: {
-                type: 'ajax',
-                url: 'mock/get-expense.php',
-                reader: {
-                    type: 'json',
-                    root: 'items'
-                }
-            },
-            listeners: {
-                datachanged: function(){
-					alert(0);
-                }
-            }    
-        });
-        store.read();
-
-        /*Ext.Ajax.request({
-            url: 'mock/get-expense.php',
-            success: function(response, opts) {
-				alert(response.responseText);
-                var obj = Ext.decode(response.responseText);
-                console.dir(obj);
-            },
-            failure: function(response, opts) {
-				console.log('server-side failure with status code ' + response.status);
-            }
-        });*/
-
         Ext.regModel('ExpenseItem', {
             fields: [
             {
@@ -62,22 +28,28 @@ Ext.setup({
             }]
         });
 
-        var store = new Ext.data.JsonStore({
-            // store configs
+        var store = new Ext.data.Store({
+            model: 'ExpenseItem',
+            sorters: 'description',
             autoDestroy: true,
-            storeId: 'expense-item-store',
+            storeId: 'myStore',
+
+            getGroupString: function(record) {
+                return record.get('date');
+            },
 
             proxy: {
                 type: 'ajax',
-                url: 'mock/get-expenses.php',
+                url: 'mock/get-expense.php',
                 reader: {
                     type: 'json',
-                    root: 'items'
+                    root: 'items',
+                    idProperty: 'name'
                 }
             },
-
-            model: 'ExpenseItem',
         });
+
+		store.read();
 
         var expenses = new Ext.List({
             itemId: 'expense-list',
@@ -103,35 +75,7 @@ Ext.setup({
                 }
             },
 
-            store: new Ext.data.Store({
-                model: 'ExpenseItem',
-                sorters: 'description',
-
-                getGroupString: function(record) { 
-                    return record.get('date');
-                },
-
-                data: [
-                {
-                    description: 'Pizza',
-                    price: '2502.00',
-                    sharing: '2',
-                    date: new Date().format('Y-m-d')
-                },
-                {
-                    description: 'Lunch',
-                    price: '100.00',
-                    sharing: '0',
-                    date: new Date().format('Y-m-d')
-                },
-                {
-                    description: 'Snacks',
-                    price: '40.00',
-                    sharing: '1',
-                    date: new Date().format('Y-m-d')
-                }
-                ]
-            })
+            store: store
         });
 
         var form = new Ext.form.FormPanel({
