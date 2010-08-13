@@ -33,6 +33,7 @@ Ext.setup({
             sorters: 'description',
             autoDestroy: true,
             storeId: 'myStore',
+			autoLoad: true,
 
             getGroupString: function(record) {
                 return record.get('date');
@@ -48,8 +49,6 @@ Ext.setup({
                 }
             },
         });
-
-		store.read();
 
         var expenses = new Ext.List({
             itemId: 'expense-list',
