@@ -31,12 +31,13 @@ Ext.setup({
         });
 
         store = new Ext.data.Store({
+			count: 0,
             model: 'ExpenseItem',
             sorters: 'description',
             autoDestroy: true,
             storeId: 'myStore',
-			autoLoad: true,
-			autoSave: true,
+            autoLoad: true,
+            autoSave: true,
 
             getGroupString: function(record) {
                 return record.get('date');
@@ -45,43 +46,55 @@ Ext.setup({
             proxy: {
                 type: 'ajax',
                 url: 'mock/get-expense.php',
-				/*api: {
-				    create: 'mock/create-expense.php',
-				    read: 'mock/read-expense.php',
-				    update: 'mock/update-expense.php',
-				    destroy: 'mock/destroy-expense.php',
-				    save: 'mock/save-expense.php'
+				/*actionMethods: {
+					create: 'create',
+					read: 'read',
+					update: 'update',
+					destroy: 'destroy'
 				},*/
                 reader: {
                     type: 'json',
                     root: 'items',
                     idProperty: 'name'
-                }
-            },
+                },
+				afterRequest: function(){
+					if(0 == store.count++) {
+						store.each(function(rec){
+							rec.phantom = false;
+						});
+					}
+				}
+            }
         });
 
-		setTimeout(function(){
-			
-			store.getAt(0).set('description', 'new');
-			
-			store.add(Ext.ModelMgr.create({
+        setTimeout(function() {
+
+            store.removeAt(0);
+
+            store.getAt(0).set('description', 'new');
+
+            store.add(Ext.ModelMgr.create({
                 description: 'sample',
-				price: '200.00',
-				sharing: '3',
-				date: new Date().format('Y-m-d')
-            }, 'ExpenseItem'));
+                price: '200.00',
+                sharing: '3',
+                date: new Date().format('Y-m-d')
+            },
+            'ExpenseItem'));
 
-			store.add(Ext.ModelMgr.create({
+            store.add(Ext.ModelMgr.create({
                 description: 'rer',
-				price: '300.00',
-				sharing: '1',
-				date: new Date().format('Y-m-d')
-            }, 'ExpenseItem'));
+                price: '300.00',
+                sharing: '1',
+                date: new Date().format('Y-m-d')
+            },
+            'ExpenseItem'));
 
-
-			//store.save();
-			
-		}, 2000);
+	        store.sync();
 	
+			return;
+
+        },
+        2000);
+
     }
 });
