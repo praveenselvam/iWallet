@@ -29,11 +29,13 @@ Ext.setup({
         });
 
         var store = new Ext.data.Store({
+            count: 0,
             model: 'ExpenseItem',
             sorters: 'description',
             autoDestroy: true,
             storeId: 'myStore',
-			autoLoad: true,
+            autoLoad: true,
+            autoSave: true,
 
             getGroupString: function(record) {
                 return record.get('date');
@@ -41,13 +43,29 @@ Ext.setup({
 
             proxy: {
                 type: 'ajax',
-                url: 'mock/get-expense.php',
+                url: 'rest/app.php/expenses',
+				actionMethods: {
+					create: 'POST',
+					read: 'GET',
+					update: 'PUT',
+					destroy: 'DELETE'
+				},
                 reader: {
                     type: 'json',
                     root: 'items',
                     idProperty: 'name'
+                },
+				extraParams: {
+					foo: 'bar'
+				},
+                afterRequest: function() {
+                    if (0 == store.count++) {
+                        store.each(function(rec) {
+                            rec.phantom = false;
+                        });
+                    }
                 }
-            },
+            }
         });
 
         var expenses = new Ext.List({
@@ -189,6 +207,13 @@ Ext.setup({
                     'ExpenseItem');
                     overlay.setCentered(true).show();
                     form.loadModel(expenseItem);
+                }
+            },
+			{
+                ui: 'mask',
+                iconCls: 'action',
+                handler: function() {
+					store.sync();
                 }
             }]
         }];

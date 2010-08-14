@@ -31,7 +31,7 @@ Ext.setup({
         });
 
         store = new Ext.data.Store({
-			count: 0,
+            count: 0,
             model: 'ExpenseItem',
             sorters: 'description',
             autoDestroy: true,
@@ -45,25 +45,28 @@ Ext.setup({
 
             proxy: {
                 type: 'ajax',
-                url: 'mock/get-expense.php',
-				/*actionMethods: {
-					create: 'create',
-					read: 'read',
-					update: 'update',
-					destroy: 'destroy'
-				},*/
+                url: 'rest/app.php/expenses',
+				actionMethods: {
+					create: 'POST',
+					read: 'GET',
+					update: 'PUT',
+					destroy: 'DELETE'
+				},
                 reader: {
                     type: 'json',
                     root: 'items',
                     idProperty: 'name'
                 },
-				afterRequest: function(){
-					if(0 == store.count++) {
-						store.each(function(rec){
-							rec.phantom = false;
-						});
-					}
-				}
+				extraParams: {
+					foo: 'bar'
+				},
+                afterRequest: function() {
+                    if (0 == store.count++) {
+                        store.each(function(rec) {
+                            rec.phantom = false;
+                        });
+                    }
+                }
             }
         });
 
@@ -89,9 +92,9 @@ Ext.setup({
             },
             'ExpenseItem'));
 
-	        store.sync();
-	
-			return;
+			store.sync();
+
+            return;
 
         },
         2000);
