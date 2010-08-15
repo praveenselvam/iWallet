@@ -2,6 +2,7 @@
     session_start();
 
     // base framework
+    require(dirname(__FILE__).'/lib/mysql_db.php');
     require(dirname(__FILE__).'/lib/session_db.php');
     require(dirname(__FILE__).'/lib/application_controller.php');
     require(dirname(__FILE__).'/lib/model.php');
@@ -13,5 +14,6 @@
 
     // Fake a database connection using _SESSION
     $dbh = new SessionDB();
+	$mdb = new MySQLDB();
 
 

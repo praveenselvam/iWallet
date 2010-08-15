@@ -52,13 +52,18 @@ class Model {
         return $rec;
     }
     static function all() {
+	
+		global $mdb;
+		return $mdb->all();
+		
         global $dbh;
         return $dbh->rs();
     }
 
-    public function __construct($params) {
-        $this->id = isset($params['id']) ? $params['id'] : null;
-        $this->attributes = $params;
+    public function __construct() {
+		//	Taking out processing $params for now.
+        //$this->id = isset($params['id']) ? $params['id'] : null;
+        //$this->attributes = $params;
     }
     public function save() {
         global $dbh;
