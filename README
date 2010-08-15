@@ -1,0 +1,9 @@
+iWallet is an expense tracking tool that lets collaboration between users so seamlessly that spending together is now very easy. The iPhone application is currently in development and will also support a desktop version when this is complete.
+
+Development Environment Setup:
+
+1. Setup a basic php server.
+2. Download the code to the server's web root.
+3. Setup a MySQL database. For now, use the dump in the /db folder. Enter the DB connection parameters in the config file.
+4. Hit the /index.html on an iPhone.
+5. Enjoy!
