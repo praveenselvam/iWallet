@@ -8,6 +8,10 @@ Ext.setup({
         Ext.regModel('ExpenseItem', {
             fields: [
             {
+                name: 'id',
+                type: 'string'
+            },
+			{
                 name: 'description',
                 type: 'string'
             },
@@ -31,7 +35,6 @@ Ext.setup({
         var store = new Ext.data.Store({
             count: 0,
             model: 'ExpenseItem',
-            sorters: 'description',
             autoDestroy: true,
             storeId: 'myStore',
             autoLoad: true,
@@ -55,9 +58,9 @@ Ext.setup({
                     root: 'items',
                     idProperty: 'name'
                 },
-				extraParams: {
+				/*extraParams: {
 					foo: 'bar'
-				},
+				},*/
                 afterRequest: function() {
                     if (0 == store.count++) {
                         store.each(function(rec) {
@@ -85,12 +88,12 @@ Ext.setup({
             grouped: true,
             fullscreen: true,
 
-            disclosure: {
+            /*disclosure: {
                 scope: 'test',
                 handler: function(record, btn, index) {
                     alert('Disclose more info for ' + record.get('description'));
                 }
-            },
+            },*/
 
             store: store
         });
@@ -218,50 +221,23 @@ Ext.setup({
             }]
         }];
 
-        var tabpanel = new Ext.TabPanel({
-            tabBar: {
-                dock: 'bottom',
-                layout: {
-                    pack: 'center'
-                }
-            },
-            defaults: {
-                scroll: 'vertical'
-            },
-            fullscreen: true,
-            ui: 'dark',
-            animation: {
-                type: 'slide',
-                cover: true
-            },
-            items: [{
-                id: 'tab-dashboard',
-                title: 'Dashboard',
-                iconCls: 'info',
-                cls: 'card1',
-                dockedItems: dashboardItems,
-                items: expenses
-            },
-            {
-                title: 'Expenses',
-                html: '<h1>Expenses</h1>',
-                iconCls: 'favorites',
-                cls: 'card2',
-                badgeText: '4'
-            },
-            {
-                title: 'Friends',
-                html: '<h1>Friends</h1>',
-                cls: 'card5',
-                iconCls: 'user',
-                badgeText: '1'
-            },
-            {
-                title: 'Settings',
-                html: '<h1>Settings</h1>',
-                cls: 'card4',
-                iconCls: 'settings'
-            }]
-        });
+		var panel = new Ext.Panel({
+			
+			layout: 'fit',
+			fullscreen: true,
+            items: [new Ext.Carousel({
+				items: [{
+					xtype: 'panel',
+					layout: 'fit',
+		            dockedItems: dashboardItems,
+					items: expenses
+				},
+				{
+					xtype: 'panel',
+					layout: 'fit'
+				}]
+			})]
+			
+		});
     }
 });

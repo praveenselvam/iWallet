@@ -1,1 +1,699 @@
-createcreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreate
+createcreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreateExpense Item CreatedExpense Item CreatedExpense Item Created
+Expense Item Createdcheckcheckcheckcheckcheckcheckcheckcheckcheckcheck
+asdasdasd
+
+view all
+Expenses Controller :: View All
+Expenses Controller :: View All
+Expenses Controller :: View All
+Expenses Controller :: View All
+Expenses Controller :: View All
+Expenses Controller :: View All
+Expenses Controller :: View All
+Expenses Controller :: View All
+Expenses Controller :: Create
+Expenses Controller :: View All
+Expenses Controller :: Create
+Expenses Controller :: View All
+Expenses Controller :: Create
+
+Expenses Controller :: Create
+Expenses Controller :: Create
+Received request
+Received request
+Expenses Controller :: Create
+Received request
+Received request
+
+
+
+
+
+
+
+
+
+/Users/praveenselvam/Sites/iWallet/rest/remote/lib
+
+re
+re
+
+re
+re
+GET
+POST
+
+PUT
+DELETE
+Request received: GET Is Restful: 1
+Request received: POST Is Restful: 1
+
+Request received: PUT Is Restful: 1
+Request received: DELETE Is Restful: 1
+Request received: GET Is Restful: 1
+s
+Request received: POST Is Restful: 1
+s
+
+Request received: PUT Is Restful: 1
+s
+Request received: DELETE Is Restful: 1
+s
+Request received: GET Is Restful: 1
+Request received: POST Is Restful: 1
+
+Request received: PUT Is Restful: 1
+Request received: DELETE Is Restful: 1
+test
+
+
+
+create
+createArray
+createArray\id
+createArray
+id
+paramArray
+Request received: GET Is Restful: 1
+Request received: POST Is Restful: 1
+Request received: PUT Is Restful: 1
+Request received: DELETE Is Restful: 1
+Request received: GET Is Restful: 1
+Request received: POST Is Restful: 1
+Request received: GET Is Restful: 1
+Request received: POST Is Restful: 1
+create new...
+Request received: PUT Is Restful: 1
+Request received: DELETE Is Restful: 1
+Request received: GET Is Restful: 1
+Request received: POST Is Restful: 1
+before create
+Request received: GET Is Restful: 1
+Request received: POST Is Restful: 1
+before create
+create model
+create complete
+Request received: GET Is Restful: 1 Convert try: 
+
+Request received: GET Is Restful: 1
+\n
+Request received: POST Is Restful: 1
+\n
+before create
+create model
+create complete
+Request received: GET Is Restful: 1
+
+Request received: POST Is Restful: 1
+
+before create
+create model
+create complete
+Request received: GET Is Restful: 1
+
+Request received: POST Is Restful: 1
+
+before create
+create model
+create complete
+Request received: GET Is Restful: 1
+ ans
+Request received: POST Is Restful: 1
+ ans
+before create
+create model
+create complete
+createArray
+id
+paramArray
+createArray
+id
+paramArray
+pk: 11
+id10
+paramArray
+id: 10
+id2
+paramArray
+id: 2
+Request received: GET Is Restful: 1
+ ans
+Request received: POST Is Restful: 1
+ ans
+before create
+create model
+create complete
+Request received: GET Is Restful: 1
+ ans
+Request received: POST Is Restful: 1
+ ans
+before create
+create model
+create complete
+Request received: GET Is Restful: 1
+dump: 
+before create
+create model
+create complete
+id2
+paramArray
+id: 2
+createArray
+id
+paramArray
+pk: 12
+id2
+paramArray
+id: 2
+createArray
+id
+paramArray
+pk: 13
+id2
+paramArray
+id: 2
+createArray
+id
+paramArray
+pk: 14
+before create
+create model
+create complete
+before create
+create model
+create complete
+before create
+create model
+create complete
+before create
+create model
+create complete
+before create
+create model
+create complete
+before create
+create model
+create complete
+before create
+create model
+create complete
+createArray
+id
+paramArray
+pk: 15
+before create
+create model
+create complete
+before create
+create model
+create complete
+before create
+create model
+create complete
+before create
+create model
+create complete
+before create
+create model
+create complete
+before create
+create model
+create complete
+before create
+create model
+create complete
+before create
+create complete
+before create
+create complete
+before create
+create complete
+before create
+create complete
+got request
+got request
+got request
+got request
+
+Request::__set_state(array(
+   'restful' => true,
+   'method' => 'GET',
+   'controller' => 'expenses',
+   'action' => NULL,
+   'id' => NULL,
+   'params' => NULL,
+))
+Request::__set_state(array(
+   'restful' => true,
+   'method' => 'POST',
+   'controller' => 'expenses',
+   'action' => NULL,
+   'id' => NULL,
+   'params' => 
+  array (
+    0 => 
+    stdClass::__set_state(array(
+       'description' => 'sample',
+       'price' => '200.00',
+       'sharing' => '3',
+       'date' => '2010-08-17',
+    )),
+    1 => 
+    stdClass::__set_state(array(
+       'description' => 'rer',
+       'price' => '300.00',
+       'sharing' => '1',
+       'date' => '2010-08-17',
+    )),
+  ),
+))
+Request::__set_state(array(
+   'restful' => true,
+   'method' => 'POST',
+   'controller' => 'expenses',
+   'action' => NULL,
+   'id' => NULL,
+   'params' => 
+  array (
+    0 => 
+    stdClass::__set_state(array(
+       'description' => 'new',
+       'price' => '50',
+       'date' => '2010-01-01',
+       'sharing' => '1',
+    )),
+  ),
+))
+Request::__set_state(array(
+   'restful' => true,
+   'method' => 'POST',
+   'controller' => 'expenses',
+   'action' => NULL,
+   'id' => NULL,
+   'params' => 
+  array (
+    0 => 
+    stdClass::__set_state(array(
+       'description' => 'Pizzas',
+       'price' => '200',
+       'date' => '2010-01-01',
+       'sharing' => '1',
+    )),
+  ),
+))
+
+Request::__set_state(array(
+   'restful' => true,
+   'method' => 'GET',
+   'controller' => 'expenses',
+   'action' => NULL,
+   'id' => NULL,
+   'params' => NULL,
+))
+Request::__set_state(array(
+   'restful' => true,
+   'method' => 'POST',
+   'controller' => 'expenses',
+   'action' => NULL,
+   'id' => NULL,
+   'params' => 
+  array (
+    0 => 
+    stdClass::__set_state(array(
+       'description' => 'sample',
+       'price' => '200.00',
+       'sharing' => '3',
+       'date' => '2010-08-17',
+    )),
+    1 => 
+    stdClass::__set_state(array(
+       'description' => 'rer',
+       'price' => '300.00',
+       'sharing' => '1',
+       'date' => '2010-08-17',
+    )),
+  ),
+))
+Request::__set_state(array(
+   'restful' => true,
+   'method' => 'POST',
+   'controller' => 'expenses',
+   'action' => NULL,
+   'id' => NULL,
+   'params' => 
+  array (
+    0 => 
+    stdClass::__set_state(array(
+       'description' => 'new',
+       'price' => '50',
+       'date' => '2010-01-01',
+       'sharing' => '1',
+    )),
+  ),
+))
+Request::__set_state(array(
+   'restful' => true,
+   'method' => 'POST',
+   'controller' => 'expenses',
+   'action' => NULL,
+   'id' => NULL,
+   'params' => 
+  array (
+    0 => 
+    stdClass::__set_state(array(
+       'description' => 'Pizzas',
+       'price' => '200',
+       'date' => '2010-01-01',
+       'sharing' => '1',
+    )),
+  ),
+))
+Expenses::__set_state(array(
+   'request' => 
+  Request::__set_state(array(
+     'restful' => true,
+     'method' => 'POST',
+     'controller' => 'expenses',
+     'action' => NULL,
+     'id' => NULL,
+     'params' => 
+    array (
+      0 => 
+      stdClass::__set_state(array(
+         'description' => 'sample',
+         'price' => '200.00',
+         'sharing' => '3',
+         'date' => '2010-08-17',
+      )),
+      1 => 
+      stdClass::__set_state(array(
+         'description' => 'rer',
+         'price' => '300.00',
+         'sharing' => '1',
+         'date' => '2010-08-17',
+      )),
+    ),
+  )),
+   'id' => NULL,
+   'params' => 
+  array (
+    0 => 
+    stdClass::__set_state(array(
+       'description' => 'sample',
+       'price' => '200.00',
+       'sharing' => '3',
+       'date' => '2010-08-17',
+    )),
+    1 => 
+    stdClass::__set_state(array(
+       'description' => 'rer',
+       'price' => '300.00',
+       'sharing' => '1',
+       'date' => '2010-08-17',
+    )),
+  ),
+))
+Expenses::__set_state(array(
+   'request' => 
+  Request::__set_state(array(
+     'restful' => true,
+     'method' => 'POST',
+     'controller' => 'expenses',
+     'action' => NULL,
+     'id' => NULL,
+     'params' => 
+    array (
+      0 => 
+      stdClass::__set_state(array(
+         'description' => 'new',
+         'price' => '50',
+         'date' => '2010-01-01',
+         'sharing' => '1',
+      )),
+    ),
+  )),
+   'id' => NULL,
+   'params' => 
+  array (
+    0 => 
+    stdClass::__set_state(array(
+       'description' => 'new',
+       'price' => '50',
+       'date' => '2010-01-01',
+       'sharing' => '1',
+    )),
+  ),
+))
+Expenses::__set_state(array(
+   'request' => 
+  Request::__set_state(array(
+     'restful' => true,
+     'method' => 'POST',
+     'controller' => 'expenses',
+     'action' => NULL,
+     'id' => NULL,
+     'params' => 
+    array (
+      0 => 
+      stdClass::__set_state(array(
+         'description' => 'Pizzas',
+         'price' => '200',
+         'date' => '2010-01-01',
+         'sharing' => '1',
+      )),
+    ),
+  )),
+   'id' => NULL,
+   'params' => 
+  array (
+    0 => 
+    stdClass::__set_state(array(
+       'description' => 'Pizzas',
+       'price' => '200',
+       'date' => '2010-01-01',
+       'sharing' => '1',
+    )),
+  ),
+))
+Expenses::__set_state(array(
+   'request' => 
+  Request::__set_state(array(
+     'restful' => true,
+     'method' => 'POST',
+     'controller' => 'expenses',
+     'action' => NULL,
+     'id' => NULL,
+     'params' => 
+    array (
+      0 => 
+      stdClass::__set_state(array(
+         'date' => '2010-08-17',
+         'id' => '',
+         'description' => 'Sample',
+         'price' => '500',
+         'sharing' => '2',
+      )),
+    ),
+  )),
+   'id' => NULL,
+   'params' => 
+  array (
+    0 => 
+    stdClass::__set_state(array(
+       'date' => '2010-08-17',
+       'id' => '',
+       'description' => 'Sample',
+       'price' => '500',
+       'sharing' => '2',
+    )),
+  ),
+))
+PARAMS ---- \narray (
+  0 => 
+  stdClass::__set_state(array(
+     'date' => '2010-08-17',
+     'id' => '',
+     'description' => 'Goof',
+     'price' => '400',
+     'sharing' => '2',
+  )),
+)
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, , , , '')
+Model::__set_state(array(
+   'id' => NULL,
+   'attributes' => NULL,
+))
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, , , , '')
+array (
+  0 => 
+  stdClass::__set_state(array(
+     'date' => '2010-08-17',
+     'id' => '',
+     'description' => 'Chc',
+     'price' => '12',
+     'sharing' => '2',
+  )),
+)
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, , , , '')
+OBJECT ----- Model::__set_state(array(
+   'id' => NULL,
+   'attributes' => NULL,
+))
+array (
+  0 => 
+  stdClass::__set_state(array(
+     'date' => '2010-08-17',
+     'id' => '',
+     'description' => 'Goo',
+     'price' => '1',
+     'sharing' => '2',
+  )),
+)
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, , , , '')
+OBJECT ----- NULL
+array (
+  0 => 
+  stdClass::__set_state(array(
+     'date' => '2010-08-17',
+     'id' => '',
+     'description' => 'Asdad',
+     'price' => '2',
+     'sharing' => '2',
+  )),
+)
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, , , , '')
+OBJECT ----- array (
+  0 => 
+  stdClass::__set_state(array(
+     'date' => '2010-08-17',
+     'id' => '',
+     'description' => 'Asdasd',
+     'price' => '23',
+     'sharing' => '3',
+  )),
+)
+array (
+  0 => 
+  stdClass::__set_state(array(
+     'date' => '2010-08-17',
+     'id' => '',
+     'description' => 'Asdasd',
+     'price' => '23',
+     'sharing' => '3',
+  )),
+)
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, , , , '')
+OBJECT ----- Model::__set_state(array(
+   'id' => NULL,
+   'attributes' => 
+  array (
+    0 => 
+    stdClass::__set_state(array(
+       'date' => '2010-08-17',
+       'id' => '',
+       'description' => 'Fads',
+       'price' => '2',
+       'sharing' => '2',
+    )),
+  ),
+))
+OUTER --- array (
+  0 => 
+  stdClass::__set_state(array(
+     'date' => '2010-08-17',
+     'id' => '',
+     'description' => 'Fads',
+     'price' => '2',
+     'sharing' => '2',
+  )),
+)
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, , , , '')
+OBJECT ----- Model::__set_state(array(
+   'id' => NULL,
+   'attributes' => 
+  array (
+    0 => 
+    stdClass::__set_state(array(
+       'date' => '2010-08-17',
+       'id' => '',
+       'description' => 'Fads',
+       'price' => '2',
+       'sharing' => '2',
+    )),
+  ),
+))
+OUTER --- array (
+  0 => 
+  stdClass::__set_state(array(
+     'date' => '2010-08-17',
+     'id' => '',
+     'description' => 'Fads',
+     'price' => '2',
+     'sharing' => '2',
+  )),
+)
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, , , , '')
+OUTER --- Model::__set_state(array(
+   'id' => NULL,
+   'attributes' => 
+  array (
+    0 => 
+    stdClass::__set_state(array(
+       'date' => '2010-08-17',
+       'id' => '',
+       'description' => 'asd',
+       'price' => '21',
+       'sharing' => '3',
+    )),
+  ),
+))
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, , , , '')
+CHECK --- Model::__set_state(array(
+   'id' => NULL,
+   'attributes' => 
+  array (
+    0 => 
+    stdClass::__set_state(array(
+       'date' => '2010-08-17',
+       'id' => '',
+       'description' => 'Run',
+       'price' => '100',
+       'sharing' => '2',
+    )),
+  ),
+))
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, , , , '')
+MDB --- array (
+  0 => 
+  stdClass::__set_state(array(
+     'date' => '2010-08-17',
+     'id' => '',
+     'description' => 'So',
+     'price' => '123',
+     'sharing' => '2',
+  )),
+)
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, , , , '')
+MDB --- NULL
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, , , , '')
+MDB --- stdClass::__set_state(array(
+   'date' => '2010-08-17',
+   'id' => '',
+   'description' => 'Fetch',
+   'price' => '213',
+   'sharing' => '2',
+))
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, , , , '')
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, , , , '')
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, Dsdf, 123, 123, '2010-08-17')
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, Dsdf, 123, 123, '2010-08-17')
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, Cvsdfs, 23, 23, '2010-08-17')
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, Scads, 231, 231, '2010-08-17')
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, Dsdf, 123, 123, '2010-08-17')
+RESULT: 
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, Cvsdfs, 23, 23, '2010-08-17')
+RESULT: 
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, Scads, 231, 231, '2010-08-17')
+RESULT: 
+INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, 'Check', 123, 123, '2010-08-17')
+RESULT: 1

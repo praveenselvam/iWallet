@@ -5,11 +5,18 @@
  */
 class Model {
     public $id, $attributes;
-    static function create($params) {
-        $obj = new self(get_object_vars($params));
+    
+	static function all() {
+		global $mdb;
+		return $mdb->all();
+    }
+    
+	static function create($params) {
+        $obj = new self($params);
         $obj->save();
         return $obj;
     }
+
     static function find($id) {
         global $dbh;
         $found = null;
@@ -51,22 +58,17 @@ class Model {
         }
         return $rec;
     }
-    static function all() {
-	
-		global $mdb;
-		return $mdb->all();
-		
-        global $dbh;
-        return $dbh->rs();
-    }
 
-    public function __construct() {
-		//	Taking out processing $params for now.
-        //$this->id = isset($params['id']) ? $params['id'] : null;
-        //$this->attributes = $params;
+    public function __construct($params) {
+        $this->id = isset($params['id']) ? $params['id'] : null;
+        $this->attributes = $params;
     }
     public function save() {
-        global $dbh;
+		global $mdb;
+        $mdb->insert($this->attributes);
+		return;
+
+		global $dbh;
         $this->attributes['id'] = $dbh->pk();
         $dbh->insert($this->attributes);
     }

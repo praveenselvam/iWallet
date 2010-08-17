@@ -19,7 +19,7 @@ class MySQLDB {
 
 	public function all(){
 		
-		$query="SELECT * FROM ExpenseItems";
+		$query="SELECT * FROM ExpenseItems ORDER BY eitem_date DESC, eitem_ID DESC";
 		$result=mysql_query($query);
 		$num=mysql_numrows($result);
 
@@ -32,6 +32,7 @@ class MySQLDB {
 			$desc	 	= mysql_result($result,$i,"eitem_desc");
 			$price		= mysql_result($result,$i,"eitem_price");
 			$sharing	= mysql_result($result,$i,"eitem_sharing");
+			$date		= mysql_result($result,$i,"eitem_date");
 			
 			if(!$is_first) $x = $x . ', ';
 			$x = $x . '{
@@ -39,7 +40,7 @@ class MySQLDB {
 				"description":	"'. $desc . '",
 				"price":		"' . $price . '", 
 				"sharing":		"' . $sharing . '", 
-				"date":			"2010-08-14"
+				"date":			"' . $date . '"
 			}';
 			$is_first = false;
 			$i++;
@@ -49,6 +50,16 @@ class MySQLDB {
 		return $x;
 		
 	}
+	
+    public function insert($records) {
+		foreach ($records as &$rec) {
+			$query="INSERT INTO ExpenseItems (`user_id`, `eitem_desc`, `eitem_price`, `eitem_sharing`, `eitem_date`) VALUES (1, '" . $rec->description . "', " . $rec->price . ", " . $rec->price . ", '" . $rec->date . "')";
+			global $logger;
+			$logger->log_message($query);
+			$result=mysql_query($query);
+			$logger->log_message('RESULT: ' . $result);
+		}
+    }
     
 	/*
 	// fake a database pk

@@ -37,7 +37,6 @@ Ext.setup({
             autoDestroy: true,
             storeId: 'myStore',
             autoLoad: true,
-            autoSave: true,
 
             getGroupString: function(record) {
                 return record.get('date');
@@ -46,20 +45,22 @@ Ext.setup({
             proxy: {
                 type: 'ajax',
                 url: 'rest/app.php/expenses',
-				actionMethods: {
+				method: 'POST',
+				noCache: false,
+				/*actionMethods: {
 					create: 'POST',
 					read: 'GET',
 					update: 'PUT',
 					destroy: 'DELETE'
-				},
+				},*/
                 reader: {
                     type: 'json',
                     root: 'items',
                     idProperty: 'name'
                 },
-				extraParams: {
+				/*extraParams: {
 					foo: 'bar'
-				},
+				},*/
                 afterRequest: function() {
                     if (0 == store.count++) {
                         store.each(function(rec) {

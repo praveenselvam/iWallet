@@ -5,16 +5,13 @@
  */
 class Expenses extends ApplicationController {
 	
-	const APP_ERROR_DIR = '../errors.log';
-	
     /**
      * view
      * Retrieves rows from database.
      */
     public function view() {
-	
-		$i = new Expense();
-		return $i->all();
+		
+		return Expense::all();
 	
     }
 
@@ -22,8 +19,23 @@ class Expenses extends ApplicationController {
      * create
      */
     public function create() {
+
+        $res = new Response();
+		$rec = Expense::create($this->params);
+
 		echo "{\"items\": []}";
-		error_log("create", 3, self::APP_ERROR_DIR); 
+		
+		return;
+		
+        $rec = Expense::create($this->params);
+        if ($rec) {
+            $res->success = true;
+            $res->message = "Created new User" . $rec->id;
+            $res->data = $rec->to_hash();
+        } else {
+            $res->message = "Failed to create User";
+        }
+        return $res->to_json();
     }
 
     /**
